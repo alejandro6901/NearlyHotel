@@ -15,6 +15,7 @@
     <?php
     if(isset($_SESSION['user'])){
          $user = $_SESSION['user'];
+      
     }
      ?>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -29,7 +30,7 @@
 <div class="iconocar">
 <i class="material-icons md-70 md-dark" id="changecolor">time_to_leave</i>
 </div>
-<form  action="<?php echo base_url()."FirstLog/registerDataFirstLog"?>" method="post">
+<form  action="<?php echo base_url()."index.php/FirstLog/registerDataFirstLog"?>" method="post">
   <hr class="hr">
 
 

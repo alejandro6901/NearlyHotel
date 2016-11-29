@@ -10,6 +10,7 @@
 
   </head>
   <body>
+
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <main class="demo-main mdl-layout__content">
     <div class="demo-container mdl-grid">
@@ -21,7 +22,7 @@
       <hr class="hr">
     <div class="container">
     <div class="form-container">
-    <form class="" action="<?php echo base_url()."/Login/authenticate"?>" method="post">
+    <form class="" action="<?php echo base_url()."index.php/Login/authenticate"?>" method="post">
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" id="email"name="email">
     <label class="mdl-textfield__label" for="email">Email</label>
@@ -51,10 +52,10 @@
     </label>
   </div>
 <div class="margin">
-  <a  href="<?php echo base_url()."Register/show_register"?>" class="mdl-checkbox__label btn-other">Create Account</a>
+  <a  href="<?php echo base_url()."index.php/Register/show_register"?>" class="mdl-checkbox__label btn-other">Create Account</a>
 </div>
   <div class="">
-    <a href="<?php echo base_url()."Forgot/show_forgot"?>" class="mdl-checkbox__label btn-other">Forgot Your Password?</a>
+    <a href="<?php echo base_url()."index.php/Forgot/show_forgot"?>" class="mdl-checkbox__label btn-other">Forgot Your Password?</a>
   </div>
        <!-- <label for=""><?php echo $error ?></label> -->
  </div>
@@ -65,6 +66,8 @@
     </div>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/material.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script>
+
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/query.js"></script>
   </body>
 </html>

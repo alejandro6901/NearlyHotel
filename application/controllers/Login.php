@@ -4,41 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Login extends CI_Controller
 {
-
-    // public function show_login()
-    // {
-    // $error = $this->session->flashdata('error');
-    // $data['error'] = $error;
-    // $this->load->view('Login/login.php',$data);
-    // }
-    //
-    // function loginUser()
-    // {
-    //    $this->load->model('Login_model');
-    //    $email = $_POST['email'];
-    //    $pass = $_POST['password'];
-    //    $data['user'] =$this->Login_model->getUsers();
-    //
-    //    foreach ($data['user'] as $users) {
-    //         if ($users['email'] == $email &&  $users['password'] == $pass) {
-    //           redirect('FirstLog/show_firstlog');
-    //         }else{
-    //           $error = $this->session->set_flashdata('error','Email or Password are incorrects');
-    //           redirect('Login/show_login');
-    //         }
-    //    }
-    //
-    //
-    // }
     public function index()
     {
         $session = $this->session->flashdata('login');
-        if ($session == null) {
 
+        if ($session == null) {
             $this->load->view('Login/login');
         } else {
-
-        redirect('FirstLog/show_firstlog');
+            redirect('index.php/FirstLog/show_firstlog');
         }
     }
     public function logout()
@@ -50,20 +23,36 @@ class Login extends CI_Controller
     {
         $email = $this->input->post('email');
         $pass = $this->input->post('password');
-        $this->load->model('Login_model');
-        $result = $this->Login_model->getUser($email, $pass);
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+        if ($this->form_validation->run()) {
+            $this->load->model('Login_model');
+            $result = $this->Login_model->getUser($email, $pass);
 
-        if (sizeof($result) > 0) {
-            $this->session->set_userdata('user', $result[0]);
-            $session = $this->session->set_flashdata('login', true);
-            redirect('/Login');
-
-
+            if (sizeof($result) > 0) {
+                foreach ($result as $key) {
+                    $id = $key['id'];
+                    $first = $key['first_log'];
+                }
+                if ($first === '0') {
+                    $this->Login_model->updateFirstLog($id);
+                    $this->session->set_userdata('user', $result[0]);
+                    $session = $this->session->set_flashdata('login', true);
+                    redirect('index.php/Login');
+                } else if ($first === '1') {
+                    $this->session->set_userdata('user', $result[0]);
+                    $session = $this->session->set_flashdata('login', true);
+                    redirect('index.php/EditProfile/show_editprofile');
+                }
+            } else {
+                $error = $this->session->set_flashdata('error', 'userName and Password are incorrect');
+                $data['error'] = $error;
+                   redirect('index.php/Login/');
+            }
         } else {
-            $error = $this->session->set_flashdata('error', 'userName and Password are incorrect');
-            $data['error'] = $error;
-            $this->load->view('Login/login', $data);
+            redirect('index.php/Login/');
         }
-    }
 
+    }
 }

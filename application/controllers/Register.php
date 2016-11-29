@@ -8,33 +8,50 @@ class Register extends CI_Controller
     {
         $error = $this->session->flashdata('error');
         $data['error'] = $error;
-        $this->load->view('Register/register.php',$data);
+        $this->load->view('Register/register.php', $data);
     }
     public function registerUser()
     {
         $data = $this->load->model('Register_model');
-        $name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $date = $_POST['date'];
-        if ($name === '' || $last_name === '' || $email === ''
-         || $password === '' || $date === '')
-       {
-           $error = $this->session->set_flashdata('error','Empty Fields');
-           redirect('Register/show_register');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('first_name', 'Name', 'trim|required');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+        $this->form_validation->set_rules('date','Date','trim|required');
+        $this->form_validation->set_message('required','%s is required');
+        if ($this->form_validation->run()) {
+                  $data = array(
+                       'first_name' =>  $this->input->post('first_name'),
+                       'last_name' =>  $this->input->post('last_name'),
+                       'email' => $this->input->post('email'),
+                       'password' => $this->input->post('password'),
+                       'date' => $this->input->post('date'),
+
+                 );
+                  $this->Register_model->insertUser($data);
+                  redirect('index.php/Login');
+
+
         } else {
-            $data = array(
-                 'first_name' => $name,
-                 'last_name' => $last_name,
-                 'email' => $email,
-                 'password' => $password,
-                 'date' => $date,
-           );
-            $this->Register_model->insertUser($data);
-            redirect('Login');
+        redirect('index.php/Register/show_register');
         }
 
-
+      //   if ($name === '' || $last_name === '' || $email === ''
+      //    || $password === '' || $date === '')
+      //  {
+      //      $error = $this->session->set_flashdata('error','Empty Fields');
+      //      redirect('index.php/Register/show_register');
+      //   } else {
+      //       $data = array(
+      //            'first_name' =>  $this->input->post('first_name'),
+      //            'last_name' =>  $this->input->post('last_name'),
+      //            'email' => $this->input->post('email'),
+      //            'password' => $this->input->post('password'),
+      //            'date' => $this->input->post('date')
+      //      );
+      //       $this->Register_model->insertUser($data);
+      //       redirect('index.php/Login');
+      //   }
     }
 }

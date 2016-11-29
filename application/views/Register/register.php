@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/material.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" >
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-ui.css" >
-
-
   </head>
   <body>
-
+    <?php echo validation_errors(); ?>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
 
@@ -26,7 +24,7 @@
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row" style="padding-left: 2%;">
       <!--back arrow-->
-      <a href="<?php echo base_url()."Login"?>" id="span" class="material-icons arrow">arrow_back</a>
+      <a href="<?php echo base_url().'index.php/Login'?>" id="span" class="material-icons arrow">arrow_back</a>
       <!--Title-->
       <span  class="mdl-layout-title">Create Account</span>
   </div>
@@ -37,7 +35,7 @@
 
     <div class="container-re">
     <div class="form-container">
-    <form class="" action="<?php echo base_url().'Register/registerUser'?>" method="post">
+    <form class="" action="<?php echo base_url().'index.php/Register/registerUser'?>" method="post">
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
@@ -85,7 +83,7 @@
       Register
    </button>
  </div>
-  <label for=""><?php echo $error ?></label>
+  <label for=""><?php echo validation_errors(); ?></label>
 </form>
 </div>
 
