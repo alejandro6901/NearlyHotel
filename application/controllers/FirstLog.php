@@ -15,7 +15,7 @@ class FirstLog extends CI_Controller
             $data['color'] =$this->Color_model->getColor();
             $this->load->view('FirstLog/firstLog',$data);
 
-    
+
 
     }
 
@@ -33,7 +33,7 @@ class FirstLog extends CI_Controller
         if (!$this->form_validation->run())
        {
            $error = $this->session->set_flashdata('error','Empty Fields');
-           redirect('index.php/FirstLog/show_firstlog',$error);
+           redirect('FirstLog/show_firstlog',$error);
 
         } else {
           $data = array(
@@ -41,7 +41,7 @@ class FirstLog extends CI_Controller
                  'id_color' => $this->input->post('id_color')
            );
           $this->FirstLog_model->insertFirstData($data);
-          redirect('index.php/EditProfile/show_editprofile');
+          redirect('EditProfile/show_editprofile');
         }
 
 

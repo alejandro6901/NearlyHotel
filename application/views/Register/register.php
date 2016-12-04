@@ -24,7 +24,7 @@
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row" style="padding-left: 2%;">
       <!--back arrow-->
-      <a href="<?php echo base_url().'index.php/Login'?>" id="span" class="material-icons arrow">arrow_back</a>
+      <a href="<?php echo base_url().'Login'?>" id="span" class="material-icons arrow">arrow_back</a>
       <!--Title-->
       <span  class="mdl-layout-title">Create Account</span>
   </div>

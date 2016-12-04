@@ -30,28 +30,12 @@ class Register extends CI_Controller
 
                  );
                   $this->Register_model->insertUser($data);
-                  redirect('index.php/Login');
+                  redirect('Login');
 
 
         } else {
-        redirect('index.php/Register/show_register');
+        redirect('Register/show_register');
         }
 
-      //   if ($name === '' || $last_name === '' || $email === ''
-      //    || $password === '' || $date === '')
-      //  {
-      //      $error = $this->session->set_flashdata('error','Empty Fields');
-      //      redirect('index.php/Register/show_register');
-      //   } else {
-      //       $data = array(
-      //            'first_name' =>  $this->input->post('first_name'),
-      //            'last_name' =>  $this->input->post('last_name'),
-      //            'email' => $this->input->post('email'),
-      //            'password' => $this->input->post('password'),
-      //            'date' => $this->input->post('date')
-      //      );
-      //       $this->Register_model->insertUser($data);
-      //       redirect('index.php/Login');
-      //   }
     }
 }

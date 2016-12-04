@@ -16,7 +16,7 @@
     <div class="cont demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
         <header class="mdl-layout__header">
         <div class="mdl-layout__header-row" style="padding-left: 2%;">
-        <a href="<?php echo base_url()."index.php/Login"?>" class="material-icons arrow">arrow_back</a>
+        <a href="<?php echo base_url()."Login"?>" class="material-icons arrow">arrow_back</a>
         <span  class="mdl-layout-title">Restore password</span>
    </div>
         </header>

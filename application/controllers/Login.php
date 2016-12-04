@@ -11,13 +11,13 @@ class Login extends CI_Controller
         if ($session == null) {
             $this->load->view('Login/login');
         } else {
-            redirect('index.php/FirstLog/show_firstlog');
+            redirect('FirstLog/show_firstlog');
         }
     }
     public function logout()
     {
         $this->session->set_userdata('user', null);
-        redirect('Login/');
+        redirect('Login');
     }
     public function authenticate()
     {
@@ -39,19 +39,22 @@ class Login extends CI_Controller
                     $this->Login_model->updateFirstLog($id);
                     $this->session->set_userdata('user', $result[0]);
                     $session = $this->session->set_flashdata('login', true);
-                    redirect('index.php/Login');
+                    redirect('Login');
                 } else if ($first === '1') {
                     $this->session->set_userdata('user', $result[0]);
                     $session = $this->session->set_flashdata('login', true);
-                    redirect('index.php/EditProfile/show_editprofile');
+                    redirect('EditProfile/show_editprofile');
                 }
             } else {
-                $error = $this->session->set_flashdata('error', 'userName and Password are incorrect');
+                $error = $this->session->set_flashdata('error', 'Username and Password are incorrect');
                 $data['error'] = $error;
-                   redirect('index.php/Login/');
+                   redirect('Login');
             }
         } else {
-            redirect('index.php/Login/');
+          $error = $this->session->set_flashdata('error', 'Username and Password are incorrect');
+          $data['error'] = $error;
+          redirect('Login',$data['error']);
+
         }
 
     }
