@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Change Password</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/material.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" >
@@ -21,10 +22,15 @@
     <div class="cont demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
-        <a href="<?php echo base_url().'EditProfile/show_editprofile'?>" id="span" class="material-icons arrow">arrow_back</a>
-      <i class="material-icons md-30">vpn_key</i>
-<span class="mdl-layout-title" id="titlepass">Change Password</span>
+    <div class="mdl-layout__header-row" style="padding-left: 2%;">
+
+  <a href="<?php echo base_url().'EditProfile/show_editprofile'?>" id="span" class="material-icons arrow">arrow_back</a>
+  <!--Title-->
+  <span  class="mdl-layout-title">Change Password</span>
+</div>
+
   </header>
+
     <div class="form-container-pass">
       <form action="<?php echo base_url().'ChangePassword/updatePassword'?>" method="post">
         <div class="formdiv container-change">

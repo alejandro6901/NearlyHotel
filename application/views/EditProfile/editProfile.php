@@ -38,6 +38,7 @@
         Profile Name:  <?php echo $user['first_name'] ?>
 
    </div>
+   <hr class="edit-hr">
    <div class="principal-container">
   <div class="options-con">
 
@@ -46,7 +47,9 @@
     </div>
 
     <div class="space">
-      <span class="mdl-checkbox__label">   <i class="material-icons">person</i>Change Personal Data</span>
+
+      <a  href="<?php echo base_url()."ChangePersonalData/show_changePersonalData"?>" class="mdl-checkbox__label btn-other">    <i class="material-icons">person</i>Change Personal Data</a>
+
     </div>
 
     <div class="space">
@@ -57,15 +60,15 @@
 
   </div>
 
-
+ </div>
+ <form class="" action="<?php echo base_url()."Login/logout"?>" method="post">
    <div class="btn nicknamediv spaceUp">
    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-     GO TO MAP
-   </button>
- </div>
- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-   Logout
- </button>
+      GO TO MAP</button>
+      <!-- <input type="submit" value="Logout" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> -->
+
+
+ </form>
 
 </div>
       </div>

@@ -5,9 +5,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class ChangePassword extends CI_Controller
 {
 
-    public function show_changePassword()
+    public function show_editNickColor()
     {
-    $this->load->view('ChangePassword/changePassword');
+    $this->load->view('EditNickColor/nick');
     }
     public function updatePassword()
     {

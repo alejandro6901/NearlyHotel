@@ -2,22 +2,22 @@
     display: flex;
     margin-top: 20px;
     justify-content: center;
-
 }
 
 .form-container-re {
     height: 26pc;
     background-color: red;
 }
-.form-container-pass{
 
-  margin-top: 20px;
+.form-container-pass {
+    margin-top: 20px;
 }
 
 .container {
     display: flex;
     justify-content: center;
 }
+
 .name {
     display: flex;
     justify-content: center;
@@ -32,8 +32,8 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 25pc;
-
 }
+
 .options-con {
     display: flex;
     flex-wrap: wrap;
@@ -41,13 +41,18 @@
     justify-content: space-around;
     width: 21pc;
 }
+
+.edit-hr {
+    width: 20pc;
+    margin-left: 3pc;
+}
+
 .principal-container {
-    margin-top: 15px;
+
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     width: 25pc;
-    border: 1px solid #f1eded;
     height: 8pc;
 }
 
@@ -66,6 +71,8 @@
     display: flex;
     font-size: 35px;
     justify-content: center;
+    margin-left: 20px;
+
 }
 
 .mdl-textfield {
@@ -84,7 +91,7 @@
 .img {
     display: flex;
     justify-content: center;
-    height: 180px;
+    height: 200px;
 }
 
 .mdl-layout__content {
@@ -175,12 +182,15 @@
     font-weight: 500;
     text-decoration: none;
 }
-.arrow{
-  color: rgb(255, 255, 255);
-  font-weight: 500;
-  text-decoration: none;
-}
 
+.arrow {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    text-decoration: none;
+}
+.arrow-pass{
+
+}
 
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
     color: rgb(7, 174, 156);
@@ -201,13 +211,12 @@
     display: flex;
     align-items: center;
 }
+
 .iconoacomo {
     display: flex;
-
-    justify-content:center;
+    justify-content: center;
     padding-bottom: 5px;
 }
-
 
 .iconocar {
     width: 25pc;
@@ -230,6 +239,7 @@
     font-size: 19pc;
     color: black;
 }
+
 .mdl-checkbox__label {
     position: relative;
     cursor: pointer;
@@ -259,9 +269,5 @@
 }
 
 .spaceUp {
-    padding-top: 20px;
-}
-
-.arrow {
-    margin-right: 10%
+    padding-top: 2px;
 }

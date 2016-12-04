@@ -27,8 +27,7 @@
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
             <input class="mdl-textfield__input" type="text" id="name" >
-            <!-- <button type="submit" name="button" class="mdl-checkbox__label btn-other">Forgot Your Password</button> -->
-
+          
             <div>
               <i class="material-icons">email</i>
             </div>
