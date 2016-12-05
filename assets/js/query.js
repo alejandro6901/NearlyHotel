@@ -1,22 +1,24 @@
 $(document).ready(function(){
 
-        $( "#datepicker" ).datepicker();
-  
-   $("#red").click(function(){
-        $("#changecolor").css("color", "red");
-     });
-   $("#blue").click(function(){
-        $("#changecolor").css("color", "blue");
-     });
-   $("#gray").click(function(){
-        $("#changecolor").css("color", "gray");
-     });
-   $("#purple").click(function(){
-        $("#changecolor").css("color", "purple");
-     });
-   $("#black").click(function(){
-        $("#changecolor").css("color", "black");
-     });
 
+$('#select').click(function() {
+
+ var id = $(this).children(":selected").attr("id");
+
+ if (id === 'red') {
+   $("#changecolor").css("color", "red");
+ }else if(id === 'blue'){
+   $("#changecolor").css("color", "blue");
+ }else if(id === 'gray'){
+   $("#changecolor").css("color", "gray");
+ }else if(id === 'purple'){
+     $("#changecolor").css("color", "purple");
+ }else{
+      $("#changecolor").css("color", "black");
+ }
+
+   });
+
+  $( "#datepicker" ).datepicker();
 
    });

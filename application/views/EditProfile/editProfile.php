@@ -35,38 +35,32 @@
    <img src="<?php echo base_url(); ?>assets/img/logo7.png" alt="" class="imagen"/>
    </div>
    <div class="name">
-        Profile Name:  <?php echo $user['first_name'] ?>
+        Profile Name:  <?php echo $user['nickname'] ?>
 
    </div>
    <hr class="edit-hr">
    <div class="principal-container">
   <div class="options-con">
-
     <div class="space">
       <a  href="<?php echo base_url()."ChangePassword/show_changePassword"?>" class="mdl-checkbox__label btn-other">    <i class="material-icons">vpn_key</i> Change Password</a>
     </div>
-
     <div class="space">
-
-      <a  href="<?php echo base_url()."ChangePersonalData/show_changePersonalData"?>" class="mdl-checkbox__label btn-other">    <i class="material-icons">person</i>Change Personal Data</a>
-
+      <a href="<?php echo base_url()."ChangePersonalData/show_changePersonalData"?>" class="mdl-checkbox__label btn-other">
+      <i class="material-icons">person</i>Change Personal Data</a>
     </div>
-
     <div class="space">
-
-      <span class="mdl-checkbox__label">    <i class="material-icons">create</i>Change Nickname and Car color</span>
+      <a  href="<?php echo base_url()."FirstLog/show_editlog"?>" class="mdl-checkbox__label btn-other">
+      <i class="material-icons">create</i>Change Nickname and Car color</a>
     </div>
 
 
   </div>
 
  </div>
- <form class="" action="<?php echo base_url()."Login/logout"?>" method="post">
+ <form class="" action="<?php echo base_url()."Mapa/show_mapa"?>" method="post">
    <div class="btn nicknamediv spaceUp">
    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
       GO TO MAP</button>
-      <!-- <input type="submit" value="Logout" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> -->
-
 
  </form>
 

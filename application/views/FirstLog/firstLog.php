@@ -15,7 +15,7 @@
     <?php
     if(isset($_SESSION['user'])){
          $user = $_SESSION['user'];
-      
+
     }
      ?>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -35,15 +35,18 @@
 
 
   <div class="colors">
+
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
-             <input class="mdl-textfield__input" type="text" id="drop"  name="color" >
-             <label for="drop" class="mdl-textfield__label">Choose one color for your car</label>
-             <select for="drop" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" name="id_color">
-               <?php foreach ($color as $colors):?>
-                <option class="mdl-menu__item" name="id_color" value="<?php echo $colors['id']?>" id="<?php echo $colors['color_name']?>">
-                  <?php echo $colors['color_name'] ?></option>
-                <?php endforeach; ?>
-            </select>
+       <label class="mdl-textfield__label left">Choose one color for your car</label>
+
+      <select  id="select" name="id_color">
+        <option value="" disabled selected>Color</option>
+        <?php foreach ($color as $colors):?>
+         <option  id="<?php echo $colors['color_name']?>" class="mdl-menu__item" name="id_color" value="<?php echo $colors['id']?>" >
+           <?php echo $colors['color_name'] ?>
+         </option>
+         <?php endforeach; ?>
+      </select>
          </div>
 </div>
 
@@ -70,7 +73,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/material.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/query.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/get.js"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/get.js"></script> -->
 
   </body>
 </html>

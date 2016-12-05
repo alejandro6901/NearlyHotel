@@ -13,6 +13,20 @@ class FirstLog extends CI_Controller
             $data['color'] =$this->Color_model->getColor();
             $this->load->view('FirstLog/firstLog',$data);
     }
+    public function show_editlog()
+    {
+      $user = $_SESSION['user'];
+      $this->load->model('Color_model');
+      $data['color'] = $this->Color_model->getColor();
+
+      // if($data['color_user'] === $data['color'] ) {
+      //    echo "si";
+      // }else{
+      //   echo "no";
+      // }
+
+      $this->load->view('EditNickColor/nick',$data);
+    }
 
     public function registerDataFirstLog()
     {
@@ -28,11 +42,11 @@ class FirstLog extends CI_Controller
            redirect('FirstLog/show_firstlog',$error);
 
         } else {
-          $data = array(
-                 'nickname' => $this->input->post('nickname'),
-                 'id_color' => $this->input->post('id_color')
-           );
-          $this->FirstLog_model->insertFirstData($data);
+          $user = $_SESSION['user'];
+          $id_user = $user['id'];
+        $color = $this->input->post('id_color');
+        $nick  =  $this->input->post('nickname');
+          $this->FirstLog_model->updateFirstData($nick,$color,$id_user);
           redirect('EditProfile/show_editprofile');
         }
     }

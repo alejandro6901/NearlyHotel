@@ -8,9 +8,12 @@ class Mapa extends CI_Controller
     public function show_mapa()
     {
      $this->load->library("Googlemaps");
-     $this->googlemaps->initialize();
+     $config = array();
+     $config['center'] = 'Universidad Técnica Nacional, San Carlos, Quesada';
+      $config['zoom'] = 10;
+     $this->googlemaps->initialize($config);
      $data['map']= $this->googlemaps->create_map();
-     $this->load->view('Mapa/mapa.php',$data);
+     $this->load->view('Mapa/mapa',$data);
     }
- 
+
 }

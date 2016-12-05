@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/material.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" >
+      <?php echo $map['js']?>
+
   </head>
   <body>
+
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
@@ -30,16 +33,22 @@
   <i class="material-icons line2">more_vert</i>
   </div>
 </div>
-  </header> 
+  </header>
+
+
   <div class="container">
-    <div class="form-container">
-</div>
+
+      <?php echo $map['html']?>
+
 </div>
       </div>
     </div>
     </main>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
+
+    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/material.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/query.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/query.js"></script> -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2xe6AzQBlOO16HUJ3F0PpEc8zuyzgwqY&callback=initMap"
+  type="text/javascript"></script>
   </body>
 </html>
