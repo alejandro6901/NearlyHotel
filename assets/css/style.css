@@ -1,6 +1,6 @@
 .form-container {
     display: flex;
-    margin-top: 20px;
+    margin-top: 60px;
     justify-content: center;
 }
 
@@ -358,7 +358,7 @@ select:focus {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-padding-top: 110px;
+
 }
 .line{
     font-size: 34px;
@@ -366,6 +366,7 @@ padding-top: 110px;
 .line2{
     font-size: 35px;
     display: flex;
+        /*margin-left: 70px;*/
     justify-content: center;
 }
 .aline{
@@ -399,7 +400,7 @@ width:117px;
 }
 .mitad{
     color: rgba(158,158,158,2);
-    width: 10.5pc;
+
     display: flex;
     justify-content: flex-start;
 }
