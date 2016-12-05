@@ -250,7 +250,10 @@
     background: white;
     color: #424242;
 }
-
+.map_row {
+    background: #07ae9c;
+    color: #fffffb;
+}
 .space {
     padding-bottom: 15px;
 }
@@ -336,4 +339,95 @@ select:focus {
   position: absolute;
   right: 0;
   left: 0;
+}
+
+
+
+.prinChange{
+    width: 25pc;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+#titlepass{
+    font-size: 30px;
+}
+.formdiv{
+    width: 25pc;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+padding-top: 110px;
+}
+.line{
+    font-size: 34px;
+}
+.line2{
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+}
+.aline{
+width: 25pc;
+}
+.titlemap{
+    display: flex;
+    justify-content: center;
+}
+.titEdit{
+    font-size: 30px;
+}
+.tamano{
+width:117px;
+}
+.prinset{
+    width: 25pc;
+}
+.lineone{
+    margin-top: 30px;
+}
+.lineall{
+    width: 25pc;
+    background-color: rgba(158,158,158,0.32);
+    height: 3px;
+}
+.mitadico{
+    width: 3.5pc;
+    display: flex;
+    justify-content: flex-start;
+}
+.mitad{
+    color: rgba(158,158,158,2);
+    width: 10.5pc;
+    display: flex;
+    justify-content: flex-start;
+}
+.color{
+    color: rgba(158,158,158,2);
+    font-size: 30px;
+}
+.linethree{
+    margin-top: 30px;
+}
+.deleteico{
+    width: 5.5pc;
+    display: flex;
+    justify-content: flex-end;
+}
+.delete{
+    color: red;
+    width: 13.5pc;
+    display: flex;
+    justify-content: center;
+}
+.alinedel{
+    margin-top: 70px;
+}
+.icodel{
+    color: red;
+    font-size: 30px;
+}
+.sinli{
+    text-decoration: none;
 }

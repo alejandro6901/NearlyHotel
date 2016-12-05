@@ -16,18 +16,19 @@
     <div class="cont demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
         <header class="mdl-layout__header">
         <div class="mdl-layout__header-row" style="padding-left: 2%;">
-        <a href="<?php echo base_url()."Login"?>" class="material-icons arrow">arrow_back</a>
+        <a href="<?php echo base_url()."Login/"?>" class="material-icons arrow">arrow_back</a>
         <span  class="mdl-layout-title">Restore password</span>
    </div>
         </header>
     <div class="container">
     <div class="form-container">
-    <form class="" action="" method="post">
+    <form class="" action="<?php echo base_url()."Forgot/resetPassword"?>" method="post">
             <label for="">Enter the email address to restare you password</label>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
-            <input class="mdl-textfield__input" type="text" id="name" >
-          
+            <input class="mdl-textfield__input" type="text" id="name" name ="email" >
+            <!-- <button type="submit" name="button" class="mdl-checkbox__label btn-other">Forgot Your Password</button> -->
+
             <div>
               <i class="material-icons">email</i>
             </div>

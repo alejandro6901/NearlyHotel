@@ -4,7 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class FirstLog extends CI_Controller
 {
+  public function __construct()
+  {
+      parent::__construct();
+  
+      $this->load->model("Login_model");
 
+
+  }
     public function show_firstlog()
     {
             $error = $this->session->flashdata('error');
@@ -47,7 +54,12 @@ class FirstLog extends CI_Controller
         $color = $this->input->post('id_color');
         $nick  =  $this->input->post('nickname');
           $this->FirstLog_model->updateFirstData($nick,$color,$id_user);
-          redirect('EditProfile/show_editprofile');
+          $result = $this->Login_model->getUser($user['email'],$user['password']);
+          if (sizeof($result) > 0) {
+              $this->session->set_userdata('user', $result[0]);
+               redirect('EditProfile/show_editprofile');
+          }
+
         }
     }
 }

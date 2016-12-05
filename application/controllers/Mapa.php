@@ -9,8 +9,8 @@ class Mapa extends CI_Controller
     {
      $this->load->library("Googlemaps");
      $config = array();
-     $config['center'] = 'Universidad Técnica Nacional, San Carlos, Quesada';
-      $config['zoom'] = 10;
+     $config['center'] = 'Quesada,Costa Rica';
+      $config['zoom'] = 16;
      $this->googlemaps->initialize($config);
      $data['map']= $this->googlemaps->create_map();
      $this->load->view('Mapa/mapa',$data);

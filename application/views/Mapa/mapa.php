@@ -24,7 +24,9 @@
 
   <div class="mdl-grid aline">
   <div class="mdl-cell mdl-cell--4-col tamano">
-  <i class="material-icons line">view_headline</i>
+    <a  href="<?php echo base_url()."Settings/show_settings"?>" class="mdl-checkbox__label map_row btn-other">   <i class="material-icons line">view_headline</i></a>
+
+
   </div>
   <div class="mdl-cell mdl-cell--4-col titlemap tamano">
     <span class="mdl-layout-title">Map</span>

@@ -52,10 +52,10 @@
     </label>
   </div>
 <div class="margin">
-  <a  href="<?php echo base_url()."index.php/Register/show_register"?>" class="mdl-checkbox__label btn-other">Create Account</a>
+  <a  href="<?php echo base_url()."Register/show_register"?>" class="mdl-checkbox__label btn-other">Create Account</a>
 </div>
   <div class="">
-    <a href="<?php echo base_url()."index.php/Forgot/show_forgot"?>" class="mdl-checkbox__label btn-other">Forgot Your Password?</a>
+    <a href="<?php echo base_url()."Forgot/show_forgot"?>" class="mdl-checkbox__label btn-other">Forgot Your Password?</a>
   </div>
        <!-- <label for=""><?php echo $error ?></label> -->
  </div>
