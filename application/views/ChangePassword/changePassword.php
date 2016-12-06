@@ -60,6 +60,9 @@
          Change
        </button>
      </div>
+     <div class="error">
+         <label for=""><?php echo $error;?></label>
+     </div>
      </div>
       </form>
 
