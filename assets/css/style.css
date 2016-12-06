@@ -1,7 +1,10 @@
 .form-container {
     display: flex;
-    margin-top: 60px;
+
     justify-content: center;
+}
+.form-forgot{
+  margin-top: 60px;
 }
 
 .form-container-re {
@@ -431,4 +434,12 @@ width:117px;
 }
 .sinli{
     text-decoration: none;
+}
+
+.error{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    margin-top: 28px;
+    color: rgba(213, 0, 0, 0.57);
 }

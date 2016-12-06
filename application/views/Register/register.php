@@ -5,22 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/material.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" >
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-ui.css" >
   </head>
   <body>
-    <?php echo validation_errors(); ?>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-
-
     <main class="demo-main mdl-layout__content">
     <div class="demo-container mdl-grid">
     <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
     <div class="cont demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
       <!-- Always shows a header, even in smaller screens. -->
-
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row" style="padding-left: 2%;">
       <!--back arrow-->
@@ -28,11 +23,7 @@
       <!--Title-->
       <span  class="mdl-layout-title">Create Account</span>
   </div>
-
       </header>
-
-
-
     <div class="container-re">
     <div class="form-container">
     <form class="" action="<?php echo base_url().'index.php/Register/registerUser'?>" method="post">
@@ -83,7 +74,10 @@
       Register
    </button>
  </div>
-  <label for=""><?php echo validation_errors(); ?></label>
+ <div class="error">
+     <label for=""><?php echo $error;?></label>
+ </div>
+
 </form>
 </div>
 

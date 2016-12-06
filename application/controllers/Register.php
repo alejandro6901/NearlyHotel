@@ -13,29 +13,35 @@ class Register extends CI_Controller
     public function registerUser()
     {
         $data = $this->load->model('Register_model');
+        $this->load->helper('email');
         $this->load->library('form_validation');
         $this->form_validation->set_rules('first_name', 'Name', 'trim|required');
         $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required');
+        $email = $this->form_validation->set_rules('email', 'Email', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
-        $this->form_validation->set_rules('date','Date','trim|required');
-        $this->form_validation->set_message('required','%s is required');
+        $this->form_validation->set_rules('date', 'Date', 'trim|required');
+        // $this->form_validation->set_message('required', '%s is required');
+
+
         if ($this->form_validation->run()) {
-                  $data = array(
-                       'first_name' =>  $this->input->post('first_name'),
-                       'last_name' =>  $this->input->post('last_name'),
-                       'email' => $this->input->post('email'),
-                       'password' => $this->input->post('password'),
-                       'date' => $this->input->post('date'),
-
-                 );
-                  $this->Register_model->insertUser($data);
-                  redirect('Login');
-
-
+          // if (valid_email($email)) {
+              $data = array(
+                         'first_name' => $this->input->post('first_name'),
+                         'last_name' => $this->input->post('last_name'),
+                         'email' => $this->input->post('email'),
+                         'password' => $this->input->post('password'),
+                         'date' => $this->input->post('date')
+                   );
+              $this->Register_model->insertUser($data);
+              redirect('Login');
+          // } else {
+          //         $this->session->set_flashdata('error', 'Invalid Email');
+          //         redirect('Register/show_register');
+          // }
         } else {
-        redirect('Register/show_register');
-        }
 
+          $this->session->set_flashdata('error', 'Empty Fields');
+          redirect('Register/show_register');
+        }
     }
 }

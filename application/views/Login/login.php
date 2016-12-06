@@ -44,20 +44,15 @@
  </div>
   <hr>
  <div class="other-op">
-  <div class="margin">
-    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
-      <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
-      <span class="mdl-checkbox__label">Keep Logged </span>
-
-    </label>
-  </div>
 <div class="margin">
   <a  href="<?php echo base_url()."Register/show_register"?>" class="mdl-checkbox__label btn-other">Create Account</a>
 </div>
   <div class="">
     <a href="<?php echo base_url()."Forgot/show_forgot"?>" class="mdl-checkbox__label btn-other">Forgot Your Password?</a>
   </div>
-       <!-- <label for=""><?php echo $error ?></label> -->
+  <div class="error">
+      <label for=""><?php echo $error;?></label>
+  </div>
  </div>
 </form>
 </div>

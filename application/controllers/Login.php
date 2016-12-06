@@ -7,9 +7,10 @@ class Login extends CI_Controller
     public function index()
     {
         $session = $this->session->flashdata('login');
-
+        $error = $this->session->flashdata('error');
+        $data['error'] = $error;
         if ($session == null) {
-            $this->load->view('Login/login');
+            $this->load->view('Login/login',$data);
         } else {
             redirect('FirstLog/show_firstlog');
         }
@@ -47,11 +48,10 @@ class Login extends CI_Controller
                 }
             } else {
                 $error = $this->session->set_flashdata('error', 'Username and Password are incorrect');
-                $data['error'] = $error;
-                   redirect('Login');
+                redirect('Login');
             }
         } else {
-          $error = $this->session->set_flashdata('error', 'Username and Password are incorrect');
+          $error = $this->session->set_flashdata('error', 'Empty Fields');
           $data['error'] = $error;
           redirect('Login',$data['error']);
 

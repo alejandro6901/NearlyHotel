@@ -21,7 +21,7 @@
    </div>
         </header>
     <div class="container">
-    <div class="form-container">
+    <div class="form-container form-forgot">
     <form class="" action="<?php echo base_url()."Forgot/resetPassword"?>" method="post">
             <label for="">Enter the email address to restare you password</label>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -38,6 +38,9 @@
    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
      Restore
    </button>
+ </div>
+ <div class="error">
+     <label for=""><?php echo $error;?></label>
  </div>
 
 
